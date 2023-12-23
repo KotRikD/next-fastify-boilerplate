@@ -1,0 +1,41 @@
+{
+  "name": "next-fastify-boilerplate",
+  "author": "Mikhail Babynichev",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "prod": "cross-env NODE_ENV=production ts-node -r tsconfig-paths/register --files src/core/index.ts",
+    "next:prod": "next build",
+    "clean": "tsc --build --clean",
+    "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss}\"",
+    "prettier:check": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss}\""
+  },
+  "dependencies": {
+    "@fastify/nextjs": "^10.0.1",
+    "@types/node": "^18.14.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.1",
+    "next": "^13.5.6",
+    "nodemon": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/react": "18.2.45",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.5"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "pnpm run prettier:fix"
+    ]
+  }
+}
