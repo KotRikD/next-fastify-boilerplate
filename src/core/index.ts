@@ -9,7 +9,8 @@ import nextConfig from '@/next.config';
     dotenv.config();
 
     const server = Fastify({
-        logger: true
+        logger: true,
+        pluginTimeout: config.isDevelopment ? 120_000 : undefined
     });
 
     server
